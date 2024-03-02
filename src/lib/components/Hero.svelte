@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Calculator from './Calculator.svelte';
+	import BmiForm from './BMIForm.svelte';
 </script>
 
 <div class="hero">
@@ -16,8 +16,7 @@
 	</div>
 </div>
 <div class="bmi-container">
-	<h2 class="bmi-heading">Enter your details below</h2>
-	<Calculator />
+	<BmiForm />
 </div>
 
 <style>
@@ -49,16 +48,10 @@
 	}
 
 	.bmi-container {
-		margin-top: -40%; /* Use negative margin to overlap the top 20% of .bmi-container */
+		margin-top: -40%;
 		background-color: #ffffff;
-		z-index: 1; /* Ensure .bmi-container is above .hero */
+		z-index: 1;
 		margin-inline: 1.5rem;
 		border-radius: 1rem;
-	}
-
-	.bmi-heading {
-		padding: 1rem;
-		color: #253347;
-		font-size: 1.5rem;
 	}
 </style>
