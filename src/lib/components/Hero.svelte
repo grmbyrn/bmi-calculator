@@ -1,7 +1,3 @@
-<script lang="ts">
-	import BmiForm from './BMIForm.svelte';
-</script>
-
 <div class="hero">
 	<div class="hero-img-container">
 		<img src="./assets/images/logo.svg" class="hero-img" alt="logo" />
@@ -15,9 +11,6 @@
 		</p>
 	</div>
 </div>
-<div class="bmi-container">
-	<BmiForm />
-</div>
 
 <style>
 	.hero {
@@ -25,6 +18,7 @@
 		flex-direction: column;
 		padding: 0 1.5rem;
 		background-image: linear-gradient(to bottom right, #d6e6fe, #d6fcfe);
+		border-radius: 0px 0px 2rem 2rem;
 	}
 
 	.hero-img-container {
@@ -40,6 +34,7 @@
 	.hero-heading {
 		font-size: 48px;
 		color: #253347;
+		margin-top: 1.5rem;
 	}
 
 	.hero-para {
@@ -47,11 +42,15 @@
 		padding-bottom: 217px;
 	}
 
-	.bmi-container {
-		margin-top: -40%;
-		background-color: #ffffff;
-		z-index: 1;
-		margin-inline: 1.5rem;
-		border-radius: 1rem;
+	@media screen and (min-width: 768px) {
+		.hero {
+			padding-inline: 3rem;
+			height: 640px;
+		}
+
+		.hero-heading {
+			margin-top: 2.5rem;
+			padding-inline: 2.6875rem;
+		}
 	}
 </style>

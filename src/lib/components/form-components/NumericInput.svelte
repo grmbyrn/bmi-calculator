@@ -45,11 +45,17 @@
 		border-radius: 0.75rem;
 		padding: 1.25rem 1.5rem;
 		font-size: 1.5rem;
-		width: 100%;
 	}
 
 	input {
 		border: none;
+		-moz-appearance: textfield; /* Firefox */
+	}
+
+	input[type='number']::-webkit-inner-spin-button,
+	input[type='number']::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
 	}
 
 	span {

@@ -1,24 +1,20 @@
 <script lang="ts">
+	import BmiForm from '$lib/components/BMIForm.svelte';
 	import Hero from '$lib/components/Hero.svelte';
+	import ResultsMean from '$lib/components/ResultsMean.svelte';
 	import AdviceCard from '$lib/components/cards/AdviceCard.svelte';
 	import LimitationCard from '$lib/components/cards/LimitationCard.svelte';
 </script>
 
 <div class="container">
 	<Hero />
+	<div class="bmi-container">
+		<BmiForm />
+	</div>
 
 	<div>
-		<div class="results-info">
-			<img src="./assets/images/image-man-eating.webp" alt="man eating" />
-			<h2>What your BMI result means</h2>
-			<p>
-				A BMI range of 18.5 to 24.9 is considered a 'healthy weight.' Maintaining a healthy weight
-				may lower your chances of experiencing health issues later on, such as obesity and type 2
-				diabetes. Aim for a nutritious diet with reduced fat and sugar content, incorporating ample
-				fruits and vegetables. Additionally, strive for regular physical activity, ideally about 30
-				minutes daily for five days a week.
-			</p>
-		</div>
+		<ResultsMean />
+
 		<div class="advice-container">
 			<AdviceCard
 				icon="./assets/images/icon-eating.svg"
@@ -46,39 +42,43 @@
 				the measurement may not be beneficial to use.
 			</p>
 			<div class="limitation-container-cards">
-				<div>
-					<LimitationCard
-						icon="./assets/images/icon-gender.svg"
-						title="Gender"
-						text="The development and body fat composition of girls and boys vary with age. Consequently, a
-                        child's age and gender are considered when evaluating their BMI."
-					/>
+				<div class="limitation-container-cards-1">
+					<div>
+						<LimitationCard
+							icon="./assets/images/icon-gender.svg"
+							title="Gender"
+							text="The development and body fat composition of girls and boys vary with age. Consequently, a
+                            child's age and gender are considered when evaluating their BMI."
+						/>
+					</div>
+					<div>
+						<LimitationCard
+							icon="./assets/images/icon-age.svg"
+							title="Age"
+							text="In aging individuals, increased body fat and muscle loss may cause BMI to underestimate
+                            body fat content."
+						/>
+					</div>
 				</div>
-				<div>
-					<LimitationCard
-						icon="./assets/images/icon-age.svg"
-						title="Age"
-						text="In aging individuals, increased body fat and muscle loss may cause BMI to underestimate
-                        body fat content."
-					/>
+				<div class="limitation-container-cards-2">
+					<div>
+						<LimitationCard
+							icon="./assets/images/icon-muscle.svg"
+							title="Muscle"
+							text="BMI may misclassify muscular individuals as overweight or obese, as it doesn't
+                            differentiate muscle from fat."
+						/>
+					</div>
+					<div>
+						<LimitationCard
+							icon="./assets/images/icon-pregnancy.svg"
+							title="Pregnancy"
+							text="Expectant mothers experience weight gain due to their growing baby. Maintaining a healthy
+                            pre-pregnancy BMI is advisable to minimise health risks for both mother and child."
+						/>
+					</div>
 				</div>
-				<div>
-					<LimitationCard
-						icon="./assets/images/icon-muscle.svg"
-						title="Muscle"
-						text="BMI may misclassify muscular individuals as overweight or obese, as it doesn't
-                        differentiate muscle from fat."
-					/>
-				</div>
-				<div>
-					<LimitationCard
-						icon="./assets/images/icon-pregnancy.svg"
-						title="Pregnancy"
-						text="Expectant mothers experience weight gain due to their growing baby. Maintaining a healthy
-                        pre-pregnancy BMI is advisable to minimise health risks for both mother and child."
-					/>
-				</div>
-				<div>
+				<div class="limitation-container-cards-3">
 					<LimitationCard
 						icon="./assets/images/icon-race.svg"
 						title="Race"
@@ -102,18 +102,12 @@
 		padding-bottom: 6rem;
 	}
 
-	.results-info {
-		padding-inline: 1.5rem;
-	}
-
-	.results-info h2 {
-		margin-top: 3rem;
-		font-size: 2rem;
-	}
-
-	.results-info p {
-		color: #5e6e85;
-		margin-top: 2rem;
+	.bmi-container {
+		margin-top: -50%;
+		background-color: #ffffff;
+		z-index: 1;
+		margin-inline: 1.5rem;
+		border-radius: 1rem;
 	}
 
 	.advice-container {
@@ -141,6 +135,42 @@
 	}
 
 	.limitation-container-cards {
-		margin-top: 5rem;
+		margin-top: 3.5rem;
+	}
+
+	@media screen and (min-width: 768px) {
+		.container {
+			width: 768px;
+		}
+
+		.bmi-container {
+			margin-top: -40%;
+		}
+
+		.advice-container {
+			padding: 3.75rem 2.5rem;
+		}
+
+		.limitation-container {
+			margin-top: 6rem;
+		}
+
+		.limitation-container-cards {
+			padding-inline: 2.4375;
+		}
+
+		.limitation-container-cards-1,
+		.limitation-container-cards-2 {
+			display: flex;
+			justify-content: space-between;
+			flex-direction: row;
+			padding: 2rem;
+			gap: 1rem;
+		}
+
+		.limitation-container-cards-3 {
+			display: flex;
+			justify-content: center;
+		}
 	}
 </style>

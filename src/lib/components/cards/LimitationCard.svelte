@@ -18,6 +18,8 @@
 		border-radius: 1rem;
 		padding: 1.5rem;
 		margin-bottom: 1rem;
+		width: 20.4375rem;
+		height: 10.5;
 	}
 
 	h3 {
@@ -28,5 +30,12 @@
 
 	p {
 		color: #5e6e85;
+	}
+
+	@media screen and (min-width: 768px) {
+		article {
+			width: 20.96875rem;
+			height: 16rem;
+		}
 	}
 </style>

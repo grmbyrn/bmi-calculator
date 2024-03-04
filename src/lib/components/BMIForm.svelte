@@ -46,7 +46,7 @@
 <form>
 	<p class="form-heading">Enter your details below</p>
 
-	<fieldset class="even-columns">
+	<fieldset class="radio-even-columns">
 		<RadioButton
 			name="measurement-unit"
 			id="metric"
@@ -65,16 +65,10 @@
 		/>
 	</fieldset>
 
-	<div
-		class="even-columns-fluid"
-		style={unit === 'metric' ? '--fluid-size: 12.5rem' : '--fluid-size: 1fr'}
-	>
-		<fieldset
-			class="even-columns-fluid"
-			style={unit === 'metric' ? '--fluid-size: 12.5rem' : '--fluid-size: 1fr;'}
-		>
+	<div class={unit === 'metric' ? 'metric' : 'imperial'}>
+		<fieldset>
 			<legend>Height</legend>
-			<div class={unit === 'metric' ? '' : 'even-columns'}>
+			<div>
 				{#if unit === 'metric'}
 					<NumericInput
 						label="Centimetres"
@@ -86,30 +80,32 @@
 						on:input={convertCentimetres}
 					/>
 				{:else}
-					<NumericInput
-						label="Feet"
-						id="height-ft"
-						name="height-ft"
-						max={10}
-						bind:value={feet}
-						unitShortcut="ft"
-						on:input={convertFeetAndInches}
-					/>
-					<NumericInput
-						label="Inches"
-						id="height-in"
-						name="height-in"
-						max={11}
-						bind:value={inches}
-						unitShortcut="in"
-						on:input={convertFeetAndInches}
-					/>
+					<div class="imperial-container">
+						<NumericInput
+							label="Feet"
+							id="height-ft"
+							name="height-ft"
+							max={10}
+							bind:value={feet}
+							unitShortcut="ft"
+							on:input={convertFeetAndInches}
+						/>
+						<NumericInput
+							label="Inches"
+							id="height-in"
+							name="height-in"
+							max={11}
+							bind:value={inches}
+							unitShortcut="in"
+							on:input={convertFeetAndInches}
+						/>
+					</div>
 				{/if}
 			</div>
 		</fieldset>
 		<fieldset>
 			<legend>Weight</legend>
-			<div class={unit === 'metric' ? '' : 'even-columns'}>
+			<div>
 				{#if unit === 'metric'}
 					<NumericInput
 						label="Kilograms"
@@ -121,24 +117,26 @@
 						on:input={convertKilograms}
 					/>
 				{:else}
-					<NumericInput
-						label="Stones"
-						id="weight-st"
-						name="weight-in"
-						max={150}
-						bind:value={stones}
-						unitShortcut="st"
-						on:input={convertStonesAndPounds}
-					/>
-					<NumericInput
-						label="Pounds"
-						id="weight-lbs"
-						name="weight-in"
-						max={13}
-						bind:value={pounds}
-						unitShortcut="lbs"
-						on:input={convertStonesAndPounds}
-					/>
+					<div class="imperial-container">
+						<NumericInput
+							label="Stones"
+							id="weight-st"
+							name="weight-in"
+							max={150}
+							bind:value={stones}
+							unitShortcut="st"
+							on:input={convertStonesAndPounds}
+						/>
+						<NumericInput
+							label="Pounds"
+							id="weight-lbs"
+							name="weight-in"
+							max={13}
+							bind:value={pounds}
+							unitShortcut="lbs"
+							on:input={convertStonesAndPounds}
+						/>
+					</div>
 				{/if}
 			</div>
 		</fieldset>
@@ -157,7 +155,7 @@
 		padding-top: 1.5rem;
 	}
 
-	.even-columns {
+	.radio-even-columns {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -168,5 +166,20 @@
 	fieldset {
 		border: none;
 		display: flex;
+	}
+
+	.metric {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.imperial {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.imperial-container {
+		display: flex;
+		gap: 1rem;
 	}
 </style>

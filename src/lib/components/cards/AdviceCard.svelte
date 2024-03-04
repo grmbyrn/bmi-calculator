@@ -20,4 +20,16 @@
 	h3 {
 		margin-top: 2rem;
 	}
+
+	.card-body > p {
+		margin-top: 1.5rem;
+	}
+
+	@media screen and (min-width: 768px) {
+		article {
+			display: flex;
+			align-items: center;
+			gap: 2.5rem;
+		}
+	}
 </style>
