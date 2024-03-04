@@ -16,13 +16,6 @@
 </div>
 
 <style>
-	div {
-		display: flex;
-		align-items: center;
-		flex-direction: row;
-		gap: 1.125rem;
-	}
-
 	label {
 		font-weight: bold;
 		color: #253347;

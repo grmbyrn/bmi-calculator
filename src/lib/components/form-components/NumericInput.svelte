@@ -45,6 +45,7 @@
 		border-radius: 0.75rem;
 		padding: 1.25rem 1.5rem;
 		font-size: 1.5rem;
+		width: 100%;
 	}
 
 	input {

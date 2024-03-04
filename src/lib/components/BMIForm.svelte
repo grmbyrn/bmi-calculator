@@ -69,7 +69,10 @@
 		class="even-columns-fluid"
 		style={unit === 'metric' ? '--fluid-size: 12.5rem' : '--fluid-size: 1fr'}
 	>
-		<fieldset>
+		<fieldset
+			class="even-columns-fluid"
+			style={unit === 'metric' ? '--fluid-size: 12.5rem' : '--fluid-size: 1fr;'}
+		>
 			<legend>Height</legend>
 			<div class={unit === 'metric' ? '' : 'even-columns'}>
 				{#if unit === 'metric'}
@@ -146,7 +149,20 @@
 
 <style>
 	form {
-		padding: 1.5rem;
+		padding-inline: 1.5rem;
+	}
+
+	.form-heading {
+		font-size: 1.5rem;
+		padding-top: 1.5rem;
+	}
+
+	.even-columns {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: 1.5rem;
+		padding-left: 0;
 	}
 
 	fieldset {

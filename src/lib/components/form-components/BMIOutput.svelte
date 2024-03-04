@@ -47,7 +47,7 @@
 				<p class="bmi-result">{BMI}</p>
 			</div>
 			<div>
-				<p>
+				<p class="bmi-para">
 					Your BMI suggests you're {classification?.name}. Your ideal weight is between
 					<strong>{lowerHealthyWeight}kgs - {upperHealthyWeight}kgs</strong>
 				</p>
@@ -55,3 +55,28 @@
 		</div>
 	{/if}
 </output>
+
+<style>
+	.heading,
+	.even-columns-fluid {
+		background-image: linear-gradient(#345ff6, #587dff);
+		color: #ffffff;
+		padding-inline: 2rem;
+		border-radius: 1rem;
+	}
+
+	.bmi-kicker {
+		font-weight: bold;
+		padding-top: 2rem;
+	}
+
+	.bmi-result {
+		font-size: 3rem;
+		margin-top: 0.5rem;
+	}
+
+	.bmi-para {
+		font-size: 0.875rem;
+		padding-bottom: 2rem;
+	}
+</style>
