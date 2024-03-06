@@ -7,9 +7,13 @@
 </script>
 
 <div class="container">
-	<Hero />
-	<div class="bmi-container">
-		<BmiForm />
+	<div class="container-lg">
+		<div class="container-lg-item">
+			<Hero />
+		</div>
+		<div class="bmi-container container-lg-item">
+			<BmiForm />
+		</div>
 	</div>
 
 	<div>
@@ -171,6 +175,30 @@
 		.limitation-container-cards-3 {
 			display: flex;
 			justify-content: center;
+		}
+	}
+
+	@media screen and (min-width: 1276px) {
+		.container {
+			width: 100%;
+		}
+
+		.container-lg {
+			display: flex;
+		}
+
+		.bmi-container {
+			position: relative;
+			margin-top: 0%;
+			bottom: 50%;
+			right: 20%;
+		}
+
+		.advice-container {
+			display: flex;
+			gap: 2rem;
+			padding-inline: 8.75rem;
+			margin-top: 2.8125rem;
 		}
 	}
 </style>

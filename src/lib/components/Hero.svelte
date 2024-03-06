@@ -53,4 +53,12 @@
 			padding-inline: 2.6875rem;
 		}
 	}
+
+	@media screen and (min-width: 1276px) {
+		.hero-heading {
+			font-size: 4rem;
+			color: #253347;
+			margin-top: 1.5rem;
+		}
+	}
 </style>

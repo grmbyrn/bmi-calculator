@@ -32,4 +32,12 @@
 			gap: 2.5rem;
 		}
 	}
+
+	@media screen and (min-width: 1276px) {
+		article {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
 </style>

@@ -3,6 +3,9 @@
 		<img src="./assets/images/image-man-eating.webp" alt="man eating" />
 	</div>
 	<div>
+		<div class="line">
+			<img src="./assets/images/pattern-curved-line-left.svg" alt="line" />
+		</div>
 		<h2>What your BMI result means</h2>
 		<p>
 			A BMI range of 18.5 to 24.9 is considered a 'healthy weight.' Maintaining a healthy weight may
@@ -15,6 +18,10 @@
 </div>
 
 <style>
+	.line {
+		display: none;
+	}
+
 	.results-info {
 		padding-inline: 1.5rem;
 	}
@@ -42,6 +49,31 @@
 
 		.results-info img {
 			margin-left: -20%;
+		}
+	}
+
+	@media screen and (min-width: 1276px) {
+		.results-info {
+			padding-inline: 8.75rem;
+		}
+
+		.line {
+			display: flex;
+			justify-content: flex-end;
+			padding-right: rem;
+		}
+
+		.results-info {
+			gap: 8.1875rem;
+			margin-top: 4.0625rem;
+		}
+
+		.results-info h2 {
+			font-size: 3rem;
+		}
+
+		.results-info img {
+			margin-left: 0%;
 		}
 	}
 </style>
